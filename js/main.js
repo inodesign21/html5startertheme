@@ -83,7 +83,7 @@
 
 
 
-// JQuery rest api test
+// JQuery rest api test flickr
 (function() {
           var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
           $.getJSON( flickerAPI, {
@@ -100,3 +100,13 @@
               });
             });
         })();
+
+// JQuery rest api test last.fm
+        $(document).ready(function() {
+            $.ajax({
+                url: "http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=08963bdec6bde5d6189e3d7dc86fa6ac&artist=Cher&album=Believe&format=json"
+            }).then(function(data) {
+               $('.lasf-fm-album-name').append(data.album.name);
+               $('.lasf-fm-album-artist').append(data.album.artist);
+            });
+        });
