@@ -114,3 +114,11 @@
                $("img[src='"+data.album.image[4]["#text"]+"']").addClass("img-responsive");
             });
         });
+
+        function myFunction() {
+            var person = prompt("Please enter your name", "Harry Potter");
+            if (person != null) {
+                document.getElementById("demo").innerHTML =
+                "Hello " + person + "! How are you today?";
+            }
+        }
