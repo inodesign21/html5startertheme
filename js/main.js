@@ -115,6 +115,12 @@
 
 // JQuery rest api test last.fm
         $("#botaoresetar").hide();
+        $(".lasf-fm-album-name").hide();
+        $(".lasf-fm-album-artist").hide();
+        $(".lasf-fm-album-playcount").hide();
+        $(".lasf-fm-album-listeners").hide();
+        $(".lasf-fm-album-img").hide();
+        $(".nohr").hide();
 
 
         function myFunctionRodar() {
@@ -123,14 +129,15 @@
             $.ajax({
                 url: "http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=08963bdec6bde5d6189e3d7dc86fa6ac&artist="+artistName+"&album="+artistAlbum+"&format=json"
             }).then(function(data) {
-               $('.lasf-fm-album-name').append(data.album.name);
-               $('.lasf-fm-album-artist').append(data.album.artist);
-               $('.lasf-fm-album-playcount').append(data.album.playcount);
-               $('.lasf-fm-album-listeners').append(data.album.listeners);
-               $('.lasf-fm-album-img').append("<img src="+data.album.image[4]["#text"]+" />");
+               $('.lasf-fm-album-name').show().append(data.album.name);
+               $('.lasf-fm-album-artist').show().append(data.album.artist);
+               $('.lasf-fm-album-playcount').show().append(data.album.playcount);
+               $('.lasf-fm-album-listeners').show().append(data.album.listeners);
+               $('.lasf-fm-album-img').show().append("<img src="+data.album.image[4]["#text"]+" />");
                $("img[src='"+data.album.image[4]["#text"]+"']").addClass("img-responsive");
                $("#botaorodar").hide();
                $("#botaoresetar").show();
+               $(".nohr").show();
             });
         }
 
