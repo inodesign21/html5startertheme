@@ -101,10 +101,25 @@
             });
         })();
 
+
+        // JQuery rest api test name
+
+        function myFunctionName() {
+            var person = prompt("Nomeeeeeee", "Harry Potter");
+            if (person != null) {
+                document.getElementById("nameUser").innerHTML =
+                "Olááááá " + person + "! Tainha, vinho e muita @#%$";
+            }
+        }
+
+
 // JQuery rest api test last.fm
-        $(document).ready(function() {
+
+        function myFunctionRodar() {
+            var artistName = prompt("Artistaaaaaaaa", "Air");
+            var artistAlbum = prompt("Albummmmmmm", "Air");
             $.ajax({
-                url: "http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=08963bdec6bde5d6189e3d7dc86fa6ac&artist="+prompt("Artista")+"&album="+prompt("Album")+"&format=json"
+                url: "http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=08963bdec6bde5d6189e3d7dc86fa6ac&artist="+artistName+"&album="+artistAlbum+"&format=json"
             }).then(function(data) {
                $('.lasf-fm-album-name').append(data.album.name);
                $('.lasf-fm-album-artist').append(data.album.artist);
@@ -113,12 +128,9 @@
                $('.lasf-fm-album-img').append("<img src="+data.album.image[4]["#text"]+" />");
                $("img[src='"+data.album.image[4]["#text"]+"']").addClass("img-responsive");
             });
-        });
-
-        function myFunction() {
-            var person = prompt("Please enter your name", "Harry Potter");
-            if (person != null) {
-                document.getElementById("demo").innerHTML =
-                "Hello " + person + "! How are you today?";
-            }
         }
+
+        
+        
+        
+        

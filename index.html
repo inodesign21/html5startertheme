@@ -110,11 +110,13 @@
             <div id="collapseZero" class="panel-collapse collapse in">
               <div class="panel-body">
                 <!-- jquery rest api lastfm-->
+                 
                   <h1>Last.fm API Rest test</h1>
-                  <button onclick="myFunction()">Coloque seu nome</button>
-                  <p id="demo"></p>
-                  <p class="lasf-fm-album-name">O album que você colocou é  </p>
+                  <h2>Clique em rodar para iniciar. Você escolherá o album e o artista do seu vinil!</h2>
+                  <button onclick="myFunctionRodar()">Rodar</button>
+                  <hr>
                   <p class="lasf-fm-album-artist">O artista escolhido é  </p>
+                  <p class="lasf-fm-album-name">O album que você colocou é  </p>
                   <p class="lasf-fm-album-listeners">Esse album tem esse número de ouvintes no last.fm:  </p>
                   <p class="lasf-fm-album-playcount">Esse album já foi tocado no last.fm esse número de vezes: </p>
                   Imagem da capa: <div class="lasf-fm-album-img"></div> 
@@ -261,6 +263,10 @@
                   <!-- jquery rest api test flickr-->
                   <h2>Flickr API Rest test</h2>
                   <div id="images"></div>
+
+                  <!-- jquery rest api test name-->
+                  <button onclick="myFunctionName()">Coloque seu nome</button>
+                  <p id="nameUser"></p>
 
               </div>
             </div>
