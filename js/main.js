@@ -114,6 +114,8 @@
 
 
 // JQuery rest api test last.fm
+        $("#botaoresetar").hide();
+
 
         function myFunctionRodar() {
             var artistName = prompt("Artistaaaaaaaa", "Air");
@@ -127,8 +129,15 @@
                $('.lasf-fm-album-listeners').append(data.album.listeners);
                $('.lasf-fm-album-img').append("<img src="+data.album.image[4]["#text"]+" />");
                $("img[src='"+data.album.image[4]["#text"]+"']").addClass("img-responsive");
+               $("#botaorodar").hide();
+               $("#botaoresetar").show();
             });
         }
+
+        $('#botaoresetar').click(function() {
+            location.reload();
+        });
+
 
 
         
