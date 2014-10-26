@@ -104,9 +104,13 @@
 // JQuery rest api test last.fm
         $(document).ready(function() {
             $.ajax({
-                url: "http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=08963bdec6bde5d6189e3d7dc86fa6ac&artist=Cher&album=Believe&format=json"
+                url: "http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=08963bdec6bde5d6189e3d7dc86fa6ac&artist="+prompt("Artista")+"&album="+prompt("Album")+"&format=json"
             }).then(function(data) {
                $('.lasf-fm-album-name').append(data.album.name);
                $('.lasf-fm-album-artist').append(data.album.artist);
+               $('.lasf-fm-album-playcount').append(data.album.playcount);
+               $('.lasf-fm-album-listeners').append(data.album.listeners);
+               $('.lasf-fm-album-img').append("<img src="+data.album.image[4]["#text"]+" />");
+               $("img[src='"+data.album.image[4]["#text"]+"']").addClass("img-responsive");
             });
         });
