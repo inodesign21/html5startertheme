@@ -1,1 +1,9 @@
-h1:first-of-type{color:red}.dog-nav{height:50px;padding:10px 0 10px 10px;float:left}
+h1:first-of-type {
+  color: red;
+}
+
+.dog-nav {
+  height: 50px;
+  padding: 10px 0 10px 10px;
+  float: left;
+}
